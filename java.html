@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Circle Area Calculator</title>
+</head>
+<body>
+  <form>
+    <label for="radius">Enter the radius:</label>
+    <input type="text" id="radius" name="radius">
+    <button type="button" onclick="calculateArea()">Calculate</button>
+  </form>
+  <p id="output"></p>
+
+  <script>
+    function calculateArea() {
+      let radius = parseFloat(document.getElementById("radius").value);
+      if (isNaN(radius)) {
+        document.getElementById("output").innerHTML = "Enter a valid radius";
+      } else {
+        let area = Math.PI * radius * radius;
+        document.getElementById("output").innerHTML = "The area of the circle is: " + area.toFixed(2);
+      }
+    }
+  </script>
+</body>
+</html>
